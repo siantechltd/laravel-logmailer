@@ -1,0 +1,39 @@
+{
+    "name": "siantech/logmailer",
+    "description": "Manage your website translations",
+    "version": "1.0.0",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "multilanguage",
+        "translations manager",
+        "internationalisation"
+    ],
+    "autoload": {
+        "psr-4": {
+            "Siantech\\LogMailer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SiaNTech LTD",
+            "homepage": "https://siantech.net"
+        }
+    ],
+    "require": {
+        "php": ">=7.3",
+        "illuminate/console": "^8.37|^9.0",
+        "illuminate/support": "^8.37|^9.0",
+        "illuminate/mail": "^9.52",
+        "illuminate/queue": "^9.52"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Siantech\\LogMailer\\LogMailerServiceProvider"
+            ],
+            "aliases": {
+            }
+        }
+    }
+}
