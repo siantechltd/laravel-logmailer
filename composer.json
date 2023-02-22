@@ -5,9 +5,8 @@
     "type": "library",
     "license": "MIT",
     "keywords": [
-        "multilanguage",
-        "translations manager",
-        "internationalisation"
+        "logs",
+        "email logs"
     ],
     "autoload": {
         "psr-4": {
