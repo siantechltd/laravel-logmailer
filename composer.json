@@ -1,6 +1,6 @@
 {
-    "name": "siantech/logmailer",
-    "description": "Manage your website translations",
+    "name": "siantech/laravel-logmailer",
+    "description": "Sends hourly email with your Laravel project log files.",
     "version": "1.0.0",
     "type": "library",
     "license": "MIT",
