@@ -24,8 +24,8 @@
         "php": ">=7.3",
         "illuminate/console": "^8.37|^9.0",
         "illuminate/support": "^8.37|^9.0",
-        "illuminate/mail": "^9.52",
-        "illuminate/queue": "^9.52"
+        "illuminate/mail": "^8.37|^9.0",
+        "illuminate/queue": "^8.37|^9.0"
     },
     "extra": {
         "laravel": {
