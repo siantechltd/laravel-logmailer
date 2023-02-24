@@ -33,12 +33,15 @@ class SendLogEmailCommand extends Command
         $files = [];
 
         foreach (glob(storage_path(). "/logs/*.log") as $filename) {
+            $ignore = false;
             foreach (config('logmailer.exclude') as $exclude){
-                if(str_contains($filename, $exclude))
+                if(str_contains($filename, $exclude)){
+                    $ignore = true;
                     continue;
+                }
             }
-
-            $files[] = $filename;
+            if(!$ignore)
+                $files[] = $filename;
         }
 
         if(!empty($files)) {
