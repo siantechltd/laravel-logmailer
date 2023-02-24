@@ -15,15 +15,16 @@ class SendHourlyLogsEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $logs;
+    protected $files;
+
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct($logs)
+    public function __construct($files)
     {
-        $this->logs = $logs;
+        $this->files = $files;
     }
 
     /**
@@ -34,7 +35,7 @@ class SendHourlyLogsEmail extends Mailable
     public function envelope()
     {
         $envelop = new Envelope();
-        
+
         if(!config('logmailer.to')){
             throw new \Exception("Invalid <to> address!");
         }
@@ -74,11 +75,12 @@ class SendHourlyLogsEmail extends Mailable
      */
     public function attachments()
     {
-        $files = [];
+        $attachments = [];
 
-        foreach (glob(storage_path(). "/logs/*.log") as $filename) {
-            $files[] = Attachment::fromPath($filename);
+        foreach ($this->files as $filename) {
+            $attachments[] = Attachment::fromPath($filename);
         }
-        return $this->logs;
+
+        return $attachments;
     }
 }

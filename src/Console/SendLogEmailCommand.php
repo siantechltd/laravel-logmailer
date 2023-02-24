@@ -3,7 +3,7 @@
 namespace Siantech\LogMailer\Console;
 
 use Illuminate\Console\Command;
-use Illuminate\Mail\Attachment;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Siantech\LogMailer\Mail\SendHourlyLogsEmail;
 
@@ -30,17 +30,20 @@ class SendLogEmailCommand extends Command
      */
     public function handle()
     {
-        $logs = [];
         $files = [];
 
         foreach (glob(storage_path(). "/logs/*.log") as $filename) {
-            $logs[] = Attachment::fromPath($filename);
+            foreach (config('logmailer.exclude') as $exclude){
+                if(str_contains($filename, $exclude))
+                    continue;
+            }
+
             $files[] = $filename;
         }
 
-        if(!empty($logs)) {
+        if(!empty($files)) {
             try {
-                Mail::send(new SendHourlyLogsEmail($logs));
+                Mail::send(new SendHourlyLogsEmail($files));
             }catch (\Exception $ex){
                 $this->error($ex->getMessage());
                 return Command::FAILURE;
