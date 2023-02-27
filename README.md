@@ -1,4 +1,4 @@
-<p align="center"><a href="https://siantech.net" target="_blank"><img src="https://raw.githubusercontent.com/siantechltd/laravel-logmailer/main/logo-siantech.png" width="400" alt="SiaNTech logo"></a></p>
+<p align="center"><a href="https://siantech.net" target="_blank"><img src="https://raw.githubusercontent.com/siantechltd/art/main/logo-siantech.png?token=GHSAT0AAAAAAB7EUJWNDCGEWBCFR4P6IEJSY75FPRA" width="400" alt="SiaNTech logo"></a></p>
 
 
 <p align="center">
