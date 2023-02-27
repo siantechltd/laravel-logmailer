@@ -22,7 +22,7 @@ class LogMailerServiceProvider extends ServiceProvider
 
             $this->publishes([
                 __DIR__.'/../resources/views' => base_path('resources/views/vendor/siantech'),
-            ], 'siantech-views');
+            ], 'siantech-logmailer');
 
             $this->commands([
                 Console\SendLogEmailCommand::class

@@ -14,7 +14,7 @@ class SendLogEmailCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'siantech:send-log-files';
+    protected $signature = 'siantech:logmailer';
 
     /**
      * The console command description.
